@@ -13,6 +13,25 @@ namespace Lamorenita.Data_Contexts
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<ContactEntity>()
+                .Property(b => b.Active)
+                .HasDefaultValue(true);
+            modelBuilder.Entity<DirectionEntity>()
+                .Property(b => b.Active)
+                .HasDefaultValue(true);
+            modelBuilder.Entity<ProductEntity>()
+                .Property(b => b.Active)
+                .HasDefaultValue(true);
+            modelBuilder.Entity<ProductTypeEntity>()
+                .Property(b => b.Active)
+                .HasDefaultValue(true);
+            modelBuilder.Entity<StoreEntity>()
+                .Property(b => b.Active)
+                .HasDefaultValue(true);
+            modelBuilder.Entity<UserEntity>()
+                .Property(b => b.Active)
+                .HasDefaultValue(true);
         }
 
         #region My DbSet

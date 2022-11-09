@@ -25,6 +25,7 @@ builder.Services.AddSingleton(provider =>
         ActivatorUtilities.GetServiceOrCreateInstance(provider, type));
     }).CreateMapper();
 });
+
 // add to call api
 builder.Services.AddScoped<IProductTypeService, ProductTypeService>();
 
