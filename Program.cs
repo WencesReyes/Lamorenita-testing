@@ -1,8 +1,13 @@
+using AutoMapper;
+using Lamorenita;
 using Lamorenita.Data_Contexts;
+using Lamorenita.Services;
+using Lamorenita.Services.Implementations;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
+// db connection from appsettings
 builder.Services.AddDbContext<LamorenitaDbContext>(
     opt =>
     {
@@ -10,7 +15,18 @@ builder.Services.AddDbContext<LamorenitaDbContext>(
         .EnableSensitiveDataLogging(true).UseLazyLoadingProxies();
     }
     );
-// Add services to the container.
+//Automapper profile
+builder.Services.AddSingleton(provider =>
+{
+    return new MapperConfiguration(config =>
+    {
+        config.AddProfile<AutoMapperProfile>();
+        config.ConstructServicesUsing(type =>
+        ActivatorUtilities.GetServiceOrCreateInstance(provider, type));
+    }).CreateMapper();
+});
+// add to call api
+builder.Services.AddScoped<IProductTypeService, ProductTypeService>();
 
 builder.Services.AddControllersWithViews();
 
