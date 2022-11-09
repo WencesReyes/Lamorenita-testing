@@ -1,0 +1,20 @@
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Lamorenita.Data_Entities
+{
+    public class PersonEntity
+    {
+        [Key]
+        public int Id { get; set; }
+        [Required, MaxLength(100)]
+        public string FirstName { get; set; }
+        [Required, MaxLength(100)]
+        public int LastName { get; set; }
+        [Required, MaxLength(100)]
+        public int SecondLastName { get; set; }
+        [Required]
+        public DateTime Created { get; set; } = DateTime.Now;
+        [Required]
+        public bool Active { get; set; } = true;
+    }
+}
