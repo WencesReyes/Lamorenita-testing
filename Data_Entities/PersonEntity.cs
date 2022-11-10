@@ -9,9 +9,9 @@ namespace Lamorenita.Data_Entities
         [Required, MaxLength(100)]
         public string FirstName { get; set; }
         [Required, MaxLength(100)]
-        public int LastName { get; set; }
+        public string LastName { get; set; }
         [Required, MaxLength(100)]
-        public int SecondLastName { get; set; }
+        public string SecondLastName { get; set; }
         [Required]
         public DateTime Created { get; set; } = DateTime.Now;
         [Required]

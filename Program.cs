@@ -28,6 +28,8 @@ builder.Services.AddSingleton(provider =>
 
 // add to call api
 builder.Services.AddScoped<IProductTypeService, ProductTypeService>();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IProductService , ProductService>();
 
 builder.Services.AddControllersWithViews();
 
