@@ -34,7 +34,7 @@ namespace Lamorenita.Data_Contexts
                 .HasDefaultValue(true);
         }
 
-        #region My DbSet
+        #region DbSets
         public DbSet<UserEntity> User { get; set; }
         public  DbSet<ProductTypeEntity> ProductType { get; set; }
         public DbSet<ProductEntity> Product { get; set; }
@@ -47,6 +47,6 @@ namespace Lamorenita.Data_Contexts
         public DbSet<StoreEntity> Store { get; set; }
         public DbSet<StoreDirectionEntity> StoreDirection { get; set; }
         public DbSet<StoreManagerEntity> StoreManager { get; set; }
-        #endregion}
+        #endregion
     }
 }
